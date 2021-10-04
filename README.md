@@ -9,7 +9,7 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/newrelic-experimental/newrelic-dotnet-grpc)
 ![GitHub Release Date](https://img.shields.io/github/release-date/newrelic-experimental/newrelic-dotnet-grpc)
 
-
+ 
 ![GitHub issues](https://img.shields.io/github/issues/newrelic-experimental/newrelic-dotnet-grpc)
 ![GitHub issues closed](https://img.shields.io/github/issues-closed/newrelic-experimental/newrelic-dotnet-grpc)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/newrelic-experimental/newrelic-dotnet-grpc)
