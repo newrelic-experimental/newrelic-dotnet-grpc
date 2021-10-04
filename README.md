@@ -1,29 +1,25 @@
 [![New Relic Experimental header](https://github.com/newrelic/opensource-website/raw/master/src/images/categories/Experimental.png)](https://opensource.newrelic.com/oss-category/#new-relic-experimental)
 
-![GitHub forks](https://img.shields.io/github/forks/newrelic-experimental/newrelic-dotnet-grpc?style=social)
-![GitHub stars](https://img.shields.io/github/stars/newrelic-experimental/newrelic-dotnet-grpc?style=social)
-![GitHub watchers](https://img.shields.io/github/watchers/newrelic-experimental/newrelic-dotnet-grpc?style=social)
+![GitHub forks](https://img.shields.io/github/forks/newrelic-experimental/newrelic-experimental-FIT-template?style=social)
+![GitHub stars](https://img.shields.io/github/stars/newrelic-experimental/newrelic-experimental-FIT-template?style=social)
+![GitHub watchers](https://img.shields.io/github/watchers/newrelic-experimental/newrelic-experimental-FIT-template?style=social)
 
-![GitHub all releases](https://img.shields.io/github/downloads/newrelic-experimental/newrelic-dotnet-grpc/total)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/newrelic-experimental/newrelic-dotnet-grpc)
-![GitHub last commit](https://img.shields.io/github/last-commit/newrelic-experimental/newrelic-dotnet-grpc)
-![GitHub Release Date](https://img.shields.io/github/release-date/newrelic-experimental/newrelic-dotnet-grpc)
+![GitHub all releases](https://img.shields.io/github/downloads/newrelic-experimental/newrelic-experimental-FIT-template/total)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/newrelic-experimental/newrelic-experimental-FIT-template)
+![GitHub last commit](https://img.shields.io/github/last-commit/newrelic-experimental/newrelic-experimental-FIT-template)
+![GitHub Release Date](https://img.shields.io/github/release-date/newrelic-experimental/newrelic-experimental-FIT-template)
 
- 
-![GitHub issues](https://img.shields.io/github/issues/newrelic-experimental/newrelic-dotnet-grpc)
-![GitHub issues closed](https://img.shields.io/github/issues-closed/newrelic-experimental/newrelic-dotnet-grpc)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/newrelic-experimental/newrelic-dotnet-grpc)
-![GitHub pull requests closed](https://img.shields.io/github/issues-pr-closed/newrelic-experimental/newrelic-dotnet-grpc)
+
+![GitHub issues](https://img.shields.io/github/issues/newrelic-experimental/newrelic-experimental-FIT-template)
+![GitHub issues closed](https://img.shields.io/github/issues-closed/newrelic-experimental/newrelic-experimental-FIT-template)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/newrelic-experimental/newrelic-experimental-FIT-template)
+![GitHub pull requests closed](https://img.shields.io/github/issues-pr-closed/newrelic-experimental/newrelic-experimental-FIT-template)
 
 # newrelic-dotnet-grpc [build badges go here when available]
 
 This New Relic .Net agent instrumentation for [Grpc.Core](https://www.nuget.org/packages/Grpc.Core) module provides distributed tracing support for Grpc.Core rpc calls. 
 
 ## Installation
-
-> [Include a step-by-step procedure on how to get your code installed. Be sure to include any third-party dependencies that need to be installed separately]
-
-## Getting Started
 
 The binaries are builts for both .net core (netstandard2.0) and .net framework (net461). Use the appropriate build that targets your application plaform. For .net framework, change ***netcore*** to ***netframework*** in the destination paths below
 
@@ -42,6 +38,21 @@ The binaries are builts for both .net core (netstandard2.0) and .net framework (
 ***
 **Note: The XML file must be dropped into ProgramData's extension folder whereas DLL file must be dropped into Program Files's extension folder**
 ***
+
+
+## Usage
+
+This package automatically adds newrelic distributed tracing headers to the Grpc client calls and extracts them on the Grpc server side. 
+
+However this instrumentation cannot create headers if they are not initializated (null). So make sure the headers object is not null. 
+
+For example, this rpc call does not initialize headers and hence they are null.
+
+`var response = await client.SayHelloAsync(new HelloRequest { Name = "World" });`
+
+So developers must instead change their call usage to initialize an non-null headers object instead.
+
+`var response = await client.SayHelloAsync(new HelloRequest { Name = "World" }, new Metadata());`
 
 
 ## Support
