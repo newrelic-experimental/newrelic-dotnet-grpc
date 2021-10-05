@@ -15,7 +15,7 @@
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/newrelic-experimental/newrelic-experimental-FIT-template)
 ![GitHub pull requests closed](https://img.shields.io/github/issues-pr-closed/newrelic-experimental/newrelic-experimental-FIT-template)
 
-# newrelic-dotnet-grpc [build badges go here when available]
+# New Relic .Net agent instrumentation for Grpc.Core
 
 The New Relic .Net agent instrumentation for [Grpc.Core](https://www.nuget.org/packages/Grpc.Core) module provides distributed tracing support for Grpc.Core RPC calls. 
 
