@@ -17,7 +17,7 @@
 
 # newrelic-dotnet-grpc [build badges go here when available]
 
-This New Relic .Net agent instrumentation for [Grpc.Core](https://www.nuget.org/packages/Grpc.Core) module provides distributed tracing support for Grpc.Core rpc calls. 
+The New Relic .Net agent instrumentation for [Grpc.Core](https://www.nuget.org/packages/Grpc.Core) module provides distributed tracing support for Grpc.Core RPC calls. 
 
 ## Installation
 
@@ -26,13 +26,13 @@ The binaries are builts for both .net core (netstandard2.0) and .net framework (
 1. Drop the extension ***dll*** file in the newrelic agent's Program Files "extensions" folder. 
 
 ```cmd
-   copy Custom.Providers.Wrapper.Asp35.dll C:\Program Files\New Relic\.NET Agent\netcore\Extensions
+   copy Custom.Providers.Wrapper.Grpc.xml "C:\Program Files\New Relic\.NET Agent\netcore\Extensions"
 ```
 
 2. Drop the extension ***xml*** file in the newrelic agent ProgramData "extensions" folder.
 
 ```cmd
-   copy Custom.Providers.Wrapper.Asp35.xml C:\ProgramData\New Relic\.NET Agent\netcore\Extensions
+   copy Custom.Providers.Wrapper.Grpc.xml "C:\ProgramData\New Relic\.NET Agent\netcore\Extensions"
 ```
 
 ***
