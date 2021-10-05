@@ -26,7 +26,7 @@ The binaries are builts for both .net core (netstandard2.0) and .net framework (
 1. Drop the extension ***dll*** file in the newrelic agent's Program Files "extensions" folder. 
 
 ```cmd
-   copy Custom.Providers.Wrapper.Grpc.xml "C:\Program Files\New Relic\.NET Agent\netcore\Extensions"
+   copy Custom.Providers.Wrapper.Grpc.dll "C:\Program Files\New Relic\.NET Agent\netcore\Extensions"
 ```
 
 2. Drop the extension ***xml*** file in the newrelic agent ProgramData "extensions" folder.
