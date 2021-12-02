@@ -62,6 +62,8 @@ namespace Custom.Providers.Wrapper.Grpc
             var headers = callOptions?.GetType().GetProperty("Headers")?.GetValue(callOptions);
             if (headers == null)
             {
+                return;
+                /*
                 FieldInfo headersFieldInfo = callOptions?.GetType().GetField("headers", BindingFlags.NonPublic | BindingFlags.Instance);
                 object newMetadata = Activator.CreateInstance(headersFieldInfo.FieldType);
                 if (newMetadata != null)
@@ -73,6 +75,7 @@ namespace Custom.Providers.Wrapper.Grpc
                 {
                     return;
                 }
+                */
             }
 
             var setHeaders = new Action<object, string, string>((carrier, key, value) =>
